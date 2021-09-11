@@ -10,7 +10,7 @@ def search_keyword(driver, Keyword):
 	driver.find_element_by_xpath('//input[@autocapitalize]').send_keys(Keyword)
 
 def get_result(driver, key:str):
-	post_number_xpath = f'//input[@autocapitalize]/following-sibling::div//div[text()="{key}"]/../../..//span[text()=" posts"]/span'
+	post_number_xpath = f'//input[@autocapitalize]/following-sibling::div//div[text()="{key}" and text()="#"]/../../..//span[text()=" posts"]/span'
 	try:
 		return driver.find_element_by_xpath(post_number_xpath).text
 	except:
@@ -27,14 +27,17 @@ input('Log in and press enter to continue... ')
 keys = [i['keys'] for i in pd.read_csv('import.csv').to_dict('records')]
 
 d = []
+i=1
 for key in keys:
 	clear_input_box(driver)
 	search_keyword(driver, key)
-	time.sleep(5)
+	time.sleep(3)
 	result = get_result(driver, key)
-	print(f"{key} - {result}")
+	print(f"{i} - {key} - {result}")
 	d.append({
+		'time':time.ctime(),
 		'keyword':key,
 		'result':result
 		})
+	i+=1
 pd.DataFrame(d).to_csv('export.csv')
