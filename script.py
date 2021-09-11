@@ -9,12 +9,12 @@ def clear_input_box(driver):
 def search_keyword(driver, Keyword):
 	driver.find_element_by_xpath('//input[@autocapitalize]').send_keys(Keyword)
 
-def get_result(driver):
+def get_result(driver, key:str):
+	post_number_xpath = f'//input[@autocapitalize]/following-sibling::div//div[text()="{key}"]/../../..//span[text()=" posts"]/span'
 	try:
-		return driver.find_element_by_xpath('//span[text()=" posts"]/span').text
+		return driver.find_element_by_xpath(post_number_xpath).text
 	except:
 		return None
-
 
 options = uc.ChromeOptions()
 options.user_data_dir = "chrome_profile"
@@ -31,7 +31,7 @@ for key in keys:
 	clear_input_box(driver)
 	search_keyword(driver, key)
 	time.sleep(5)
-	result = get_result(driver)
+	result = get_result(driver, key)
 	print(f"{key} - {result}")
 	d.append({
 		'keyword':key,
