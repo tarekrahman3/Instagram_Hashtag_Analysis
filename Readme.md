@@ -4,7 +4,7 @@ First Time Setup:
   3. Check the box called “Add Python 3.9 to PATH“
   ![How-to-Install-Python-2](https://user-images.githubusercontent.com/44648395/133725440-9ecce508-fba8-4f98-97cd-e36beda06a31.jpg)
   4. Click "Install Now" to and finish the installation normally.
-  5.Open Powershell
+  5. Open Powershell
   6. execute following commands serial by serial:
     pip3 install undetected-chromedriver
     pip3 install pandas as pd
