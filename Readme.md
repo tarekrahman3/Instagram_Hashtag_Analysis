@@ -5,9 +5,9 @@ First Time Setup:
   ![How-to-Install-Python-2](https://user-images.githubusercontent.com/44648395/133725440-9ecce508-fba8-4f98-97cd-e36beda06a31.jpg)
   4. Click "Install Now" to and finish the installation normally.
   5. Open Powershell
-  6. execute following commands serial by serial:
-    pip3 install undetected-chromedriver
-    pip3 install pandas as pd
+  6. execute following commands serial by serial:<br></br>
+    pip3 install undetected-chromedriver<br></br>
+    pip3 install pandas as pd<br></br>
   7. Extract the zip file into an empty folder where the program will run.
 
 Usage:
