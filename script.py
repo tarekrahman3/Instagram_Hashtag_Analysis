@@ -1,8 +1,12 @@
+# -*- coding: utf-8 -*-
+#author: Tarek R.
+#date: Sep 17, 2021
+
 import undetected_chromedriver.v2 as uc
 from selenium.webdriver.common.keys import Keys
-import time
-import pandas as pd
 from random import randint as rand
+import pandas as pd
+import time
 
 def clear_input_box(driver):
 	driver.find_element_by_xpath('//input[@autocapitalize]').clear()
@@ -22,7 +26,7 @@ driver.get('https://www.instagram.com/accounts/login/')
 
 input('Log in and press enter to continue... ')
 
-keys = [i['keys'] for i in pd.read_csv('import.csv').to_dict('records')]
+keys = [i['keywords'] for i in pd.read_csv('import.csv').to_dict('records')]
 
 d = []
 try:
@@ -30,7 +34,7 @@ try:
 	for key in keys:
 		clear_input_box(driver)
 		search_keyword(driver, key)
-		time.sleep(rand(5,7))
+		time.sleep(rand(8,20))
 		result = get_result(driver, key)
 		print(f"{i} - {key} - {result}")
 		d.append({
@@ -40,4 +44,5 @@ try:
 			})
 		i+=1
 finally:
-	pd.DataFrame(d).to_csv('export.csv')
+	pd.DataFrame(d).to_csv(f'export at {str(time.ctime()).replace(':','_')}.csv')
+	driver.quit()
