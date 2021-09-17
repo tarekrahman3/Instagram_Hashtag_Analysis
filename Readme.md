@@ -6,7 +6,7 @@ First Time Setup:
 
   5. Click "Install Now" to and finish the installation normally.
   6. Open Powershell
-  7. execute following commands serial by serial:<br></br>
+  7. execute following two commands:<br></br>
     pip3 install undetected-chromedriver<br></br>
     pip3 install pandas<br></br>
   7. Extract the zip into an empty folder where the program will run (basically puting the two file, 'import.csv' and 'Insta Hashtag Survey.py' into a folder).
