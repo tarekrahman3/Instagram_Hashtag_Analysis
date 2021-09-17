@@ -7,7 +7,7 @@ First Time Setup:
   5. Open Powershell
   6. execute following commands serial by serial:<br></br>
     pip3 install undetected-chromedriver<br></br>
-    pip3 install pandas as pd<br></br>
+    pip3 install pandas<br></br>
   7. Extract the zip file into an empty folder where the program will run.
 
 Usage:
