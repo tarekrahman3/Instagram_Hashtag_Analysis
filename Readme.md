@@ -12,6 +12,8 @@ First Time Setup:
 
 Usage:
 -  create a csv file named import.csv and write "keywords" in the first cell (this is a must. see sample import.csv for example)
+-  ![csv file header example](https://user-images.githubusercontent.com/44648395/133727864-44d04745-694f-438e-bd9b-4d81016e297c.png)
+
 -  you must put this csv file in the folder where you extracted the source code (in step 7 above)
 -  doubke click "Insta Hashtag Survey.py" file and wait a few moments for the browser to open
 -  wait till the browser goes to instagram log in page by itself
@@ -19,4 +21,5 @@ Usage:
 -  when the browser goes to instagram homepage after sign up go to the python window
 -  you will see "Log in and press enter to continue..."
 -  so, press enter and sit back :)
-  
+
+ Note - try to scrap less than 800/1000 keywords at a single time and give a fair break between each runs
