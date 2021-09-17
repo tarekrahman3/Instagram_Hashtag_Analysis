@@ -2,10 +2,11 @@ First Time Setup:
   1. Download Python from https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe
   2. Open the downloaded file
   3. Check the box called “Add Python 3.9 to PATH“
-  ![How-to-Install-Python-2](https://user-images.githubusercontent.com/44648395/133725440-9ecce508-fba8-4f98-97cd-e36beda06a31.jpg)
-  4. Click "Install Now" to and finish the installation normally.
-  5. Open Powershell
-  6. execute following commands serial by serial:<br></br>
+  ![add_Python_to_Path](https://user-images.githubusercontent.com/44648395/133729705-585a5085-eb2d-4033-8dc2-3ec5660d101f.png)
+
+  5. Click "Install Now" to and finish the installation normally.
+  6. Open Powershell
+  7. execute following commands serial by serial:<br></br>
     pip3 install undetected-chromedriver<br></br>
     pip3 install pandas<br></br>
   7. Extract the zip into an empty folder where the program will run (basically puting the two file, 'import.csv' and 'Insta Hashtag Survey.py' into a folder).
