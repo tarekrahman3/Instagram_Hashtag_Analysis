@@ -8,7 +8,7 @@ First Time Setup:
   6. execute following commands serial by serial:<br></br>
     pip3 install undetected-chromedriver<br></br>
     pip3 install pandas<br></br>
-  7. Extract the zip file into an empty folder where the program will run.
+  7. Extract the zip into an empty folder where the program will run (basically puting the two file, 'import.csv' and 'Insta Hashtag Survey.py' into a folder).
 
 Usage:
 -  create a csv file named import.csv and write "keywords" in the first cell (this is a must. see sample import.csv for example)
