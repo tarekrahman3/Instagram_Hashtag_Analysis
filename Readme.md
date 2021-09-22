@@ -1,5 +1,6 @@
 Owner: Tarek R.<br></br>
-https://www.upwork.com/freelancers/~01cb49d3357f7915f8
+Contact: https://www.upwork.com/freelancers/~01cb49d3357f7915f8
+
 
 Disclaimer: This instruction is for Windows OS<br></br>
 First Time Setup:
