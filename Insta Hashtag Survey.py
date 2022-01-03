@@ -8,11 +8,16 @@ from random import randint as rand
 import pandas as pd
 import time
 
+def start_webdriver():
+	return uc.Chrome()
+
 def clear_input_box(driver):
 	driver.find_element_by_xpath('//input[@autocapitalize]').clear()
 
 def search_keyword(driver, Keyword):
 	driver.find_element_by_xpath('//input[@autocapitalize]').send_keys(Keyword)
+
+
 
 def get_result(driver, key:str):
 	post_number_xpath = f'//input[@autocapitalize]/following-sibling::div//div[text()="{key}" and text()="#"]/../../..//span[text()=" posts" or text()=" post"]/span'
@@ -20,6 +25,10 @@ def get_result(driver, key:str):
 		return driver.find_element_by_xpath(post_number_xpath).text
 	except:
 		return None
+
+if '__name__'=='__main__':
+	driver = start_webdriver()
+
 
 driver = uc.Chrome()
 driver.get('https://www.instagram.com/accounts/login/')
