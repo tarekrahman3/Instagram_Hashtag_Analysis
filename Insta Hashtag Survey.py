@@ -26,7 +26,7 @@ def get_result(driver, key:str):
 	except:
 		return None
 
-if '__name__'=='__main__':
+if __name__=='__main__':
 	driver = start_webdriver()
 	driver = uc.Chrome()
 	driver.get('https://www.instagram.com/accounts/login/')
