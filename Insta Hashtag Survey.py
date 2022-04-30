@@ -28,30 +28,28 @@ def get_result(driver, key:str):
 
 if '__name__'=='__main__':
 	driver = start_webdriver()
+	driver = uc.Chrome()
+	driver.get('https://www.instagram.com/accounts/login/')
 
+	input('Log in and press enter to continue... ')
 
-driver = uc.Chrome()
-driver.get('https://www.instagram.com/accounts/login/')
+	keys = [i['keywords'] for i in pd.read_csv('import.csv').to_dict('records')]
 
-input('Log in and press enter to continue... ')
-
-keys = [i['keywords'] for i in pd.read_csv('import.csv').to_dict('records')]
-
-d = []
-try:
-	i=1
-	for key in keys:
-		clear_input_box(driver)
-		search_keyword(driver, key)
-		time.sleep(rand(8,20))
-		result = get_result(driver, key)
-		print(f"{i} - {key} - {result}")
-		d.append({
-			'time':time.ctime(),
-			'keyword':key,
-			'result':result
-			})
-		i+=1
-finally:
-	pd.DataFrame(d).to_csv(f'export at {str(time.ctime()).replace(':','_')}.csv')
-	driver.quit()
+	d = []
+	try:
+		i=1
+		for key in keys:
+			clear_input_box(driver)
+			search_keyword(driver, key)
+			time.sleep(rand(8,20))
+			result = get_result(driver, key)
+			print(f"{i} - {key} - {result}")
+			d.append({
+				'time':time.ctime(),
+				'keyword':key,
+				'result':result
+				})
+			i+=1
+	finally:
+		pd.DataFrame(d).to_csv(f'export at {str(time.ctime()).replace(':','_')}.csv')
+		driver.quit()
